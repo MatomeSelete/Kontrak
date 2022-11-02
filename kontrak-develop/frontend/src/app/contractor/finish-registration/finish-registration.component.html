@@ -1,0 +1,154 @@
+
+<!--==========================alerts=============================-->
+<p-toast  position="top-center"></p-toast>
+
+
+
+<p-confirmDialog #cd [breakpoints]="{'960px': '75vw', '640px': '100vw'}"  [style]="{width: '30vw'}">
+  <ng-template pTemplate="header">
+     
+  </ng-template>
+  <ng-template pTemplate="footer">
+      <button type="button" pButton  id="co" class="co" icon="pi pi-times" label="No" (click)="cd.reject()"></button>
+      <button type="button" pButton id="co" class="co" icon="pi pi-check" label="Yes" (click)="cd.accept()"></button>
+  </ng-template>
+</p-confirmDialog>
+<div class="">
+  <div
+    class="container px-4 py-5 px-md-5 text-lg-start my-5 col-md-12 col-lg-12 col-sm-12"
+  >
+    <div class="row justify-content-center align-items-center">
+      <div class="col col-md -12 col-xl-7 justify-items-center">
+        <div
+          class="card end bg-glass px-4 py-5 px-md-5 w-10xl background"
+          style="border-radius: 15px;"
+        >
+          <h1>
+            <span style="color: #efac48;">Kon</span
+            ><span style="color: #0f5b87;">trak</span>
+          </h1>
+
+          <p > finish Registration</p>
+
+          <form [formGroup]="form" (ngSubmit)="confirm()">
+            <!-- //////// -->
+          
+
+            <!-- ///////// -->
+            <div class="input-group form-group mb-3 vb">
+              <div class="icons"></div>
+              <select
+                (change)="select($event)"
+                formControlName="category"
+                class="form-control c"
+                placeholder="Choose your category"
+                [ngClass]="{'is-invalid': submitted && f['category'].errors }"
+              >
+                <option value="" disabled selected>Choose your category</option>
+                <option
+                  value="{{i}}"
+                  *ngFor="let category of category; index as i"
+                  [ngValue]="category"
+                >
+                  {{ category.category }}
+                </option>
+              </select>
+              <div
+                *ngIf="submitted && f['category'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['category'].errors['required']">
+                  category is required
+                </div>
+              </div>
+            </div>
+
+            <!-- ////////// -->
+            <div class="input-group form-group mb-3 vb">
+              <div class="icons"></div>
+              <select
+                formControlName="subCategory"
+                class="form-control c"
+                placeholder="Choose your sub category"
+                [ngClass]="{'is-invalid': submitted && f['subCategory'].errors }"
+              >
+                <option value="" disabled selected>Choose your sub category</option>
+
+                <option *ngFor="let subcategory of sub" [ngValue]="subcategory">
+                  {{ subcategory }}
+                </option>
+              </select>
+              <div
+                *ngIf="submitted && f['subCategory'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['subCategory'].errors['required']">
+                  subCategory is required
+                </div>
+              </div>
+            </div>
+
+            <!-- ///////// -->
+            <div class="input-group form-group mb-3 vb">
+              <div class="icons"></div>
+              <select
+                formControlName="location"
+                class="form-control c"
+                placeholder="Choose location"
+                [ngClass]="{'is-invalid': submitted && f['location'].errors }"
+              >
+                <option value="" disabled selected>Choose location</option>
+                <option *ngFor="let location of locations" [ngValue]="location">
+                  {{ location }}
+                </option>
+              </select>
+              <div
+                *ngIf="submitted && f['location'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['location'].errors['required']">
+                  location is required
+                </div>
+              </div>
+            </div>
+
+            <!-- \\\\\\\\\\\ -->
+            <div class="form-group">
+                              
+              <input
+                type="number"
+                formControlName="callout"
+                [ngClass]="{'is-invalid': submitted && f['callout'].errors }"
+                id=""
+                placeholder="R"
+              />
+              <div
+              *ngIf="submitted && f['callout'].errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f['callout'].errors['required']">
+                location is required
+              </div>
+            </div>
+        
+            </div>
+
+
+            <!-- =================================== -->
+            <div class="form-group">
+              <div class="form-group mt-3" style="text-align: center;">
+                <button type="submit" class="submit btn-block  bt-orange">
+                 finish
+                </button>
+              </div>
+            
+                
+            </div>
+          </form>
+
+          <div class="fillup"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

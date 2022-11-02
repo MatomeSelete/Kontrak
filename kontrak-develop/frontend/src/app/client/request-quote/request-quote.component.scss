@@ -1,0 +1,236 @@
+.main {
+    margin-left: auto;
+    margin-right: auto;
+    height: 100vh;
+    width: 90%;
+    background-color: #FFFFFF;
+}
+
+.cards { 
+    width: 100%;
+    // padding: 10px;
+    border-radius: 10px;
+    background: #F5F5F5;
+}
+
+.card {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    box-shadow: 0px 4px 4px #EFAC48;
+    // 
+}
+
+.buttons {
+        display: flex;
+        flex-wrap: wrap;
+        width: auto;
+        
+    }
+
+    .btncards {
+        display: flex;
+        margin: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 45%;
+        
+    }
+    .bt-orange{
+        width: 200px;
+        height: 40px;
+        background: #EFAC48;
+        border-radius: 5px;
+    }
+    
+    button {
+        background-color: black;
+        color: white;
+        padding: 5px;
+        width: 100%;
+        font-size: 10px;
+        width: 120px;
+        
+    }
+
+    .co{
+         background:  #EFAC48;
+        
+      }
+
+.icons {
+    height: 31px;
+    width: 30px;
+    padding-left: 6px;
+    padding-top: 4px;
+    background-color: #E8A746;
+    margin-left: -2px;
+    // margin-left: auto;
+    // margin-right: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 200%;
+    text-align: center;
+} 
+
+p {
+    width: 80%;
+}
+
+img {
+    height: 10%;
+}
+
+.ratings {
+    display: flex;
+}
+
+
+
+.card-img-top {
+    margin-left: auto;
+    margin-right: auto;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+}
+
+button:hover {
+    color: #fff !important;
+    text-decoration: none;
+    }
+
+
+@media screen and (min-width: 900px) {
+    .main {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: auto;
+        margin-right: auto;
+        height: 100vh;
+        width: 100%;
+        background-color: #FFFFFF;
+        
+    }
+    
+    .cards {
+       
+        margin-left: auto;
+        margin-right: auto;
+        width: 46%;
+        margin: 10px;
+        // padding: 10px;
+        border-radius: 10px;
+        background: #F5F5F5;
+        height: 48%;
+        
+    }
+    
+    .card {
+        border: 2px solid red;
+        height: 100%;
+        margin-bottom: 15px;
+        padding: 10px;
+        border: none;
+        width: 100%;
+        box-shadow: 0px 4px 4px #EFAC48;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        
+    }
+    
+    .btncards {
+        margin: 5px;
+        width: 25%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    button {
+        display: inline-block;
+        background-color: black;
+        color: white;
+        padding: 10;
+        width: 110px;
+        
+    }
+    
+    .icons {
+        height: 31px;
+        width: 30px;
+        padding-left: 6px;
+        padding-top: 4px;
+        background-color: #E8A746;
+        margin-left: -2px;
+       
+    }
+
+    img {
+        margin-left: auto;
+        margin-right: auto;
+        height: 40%; 
+        width: 60%;
+    }
+        
+
+}
+
+.grey
+{
+	color: grey;
+}
+
+.orange{
+    color: #EFAC48;
+   
+}
+.bt-orange{
+    width: 100px;
+    height: 40px;
+    background: #EFAC48;
+    border-radius: 5px;
+}
+#co{
+    width: 140px;
+    height: 40px;
+  
+  border: 0px;
+  background: #EFAC48;
+  border-radius: 5px;
+  }
+
+  .p{
+    background-color: black;
+  }
+  .n{
+    background-color: black;
+  }
+
+  .im{
+    width: 280px;
+    height: 280px;
+}
+@media screen and (min-width: 375px)and (max-width:844px) {
+    .im{
+        width: 280px;
+        height: 125px;
+    }
+  }
+
+  .smaller{
+    font-size: 125% ;
+  }

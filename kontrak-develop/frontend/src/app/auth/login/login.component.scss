@@ -1,0 +1,149 @@
+.background{
+    box-shadow:  0px 4px 4px #EFAC48;
+    background-color: #f5f5f5;
+    margin-right: auto;
+    margin-left: auto;
+    width: 95%;
+    margin-top: 15%;
+    margin-bottom: 25%;
+}
+
+.bt-orange{
+    width: 200px;
+    height: 40px;
+    background: #EFAC48;
+    border-radius: 5px;
+}
+.jj{
+    background-color: #f5f5f5;
+}
+
+.la{
+    background-color: #f5f5f5;
+}
+.orange{
+    color: #EFAC48;
+   
+}
+
+h1{
+    font-size: 40px;
+    text-shadow: 0px 2px 2px#bcbcbc;
+    text-align: center;
+}
+.nn{
+    background-color: #f5f5f5;
+    height: 100vh;
+}
+.cen{
+    text-align: center;
+    font-size: 24px;
+}
+
+.mgr{
+    margin-left: 5px;
+  
+}
+
+.test{
+    background-color: rgb(132, 206, 132);
+}
+.input{
+    background-color: #ffffff;
+    border: none;
+    outline: none;
+}
+
+.c{
+    background-color: #ffffff;
+    border-radius: 2px;
+    border: 0px;
+}
+
+.email{
+    position: absolute;
+    margin-top: 7px;
+}
+a{
+    text-decoration: none;
+}
+
+.end{
+    background-color: #f5f5f5
+    ;
+}
+
+.bt-orange{
+    width: 200px;
+    height: 40px;
+
+
+background: #EFAC48;
+border-radius: 5px;
+}
+
+
+.icons {
+    display: flex;
+}
+
+.i1{
+    //border: 2px solid red;
+    padding-left: 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin: auto;
+    color: #EFAC48;
+   // background-color: white;
+
+}
+
+.i2{
+    padding-left: 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-top: auto;
+    color: #EFAC48;
+    background-color: white;
+}
+
+.vb{
+    color: #EFAC48;
+    background-color: white;
+    border-radius: 2px;
+    border: 0px;
+}
+
+.bv{
+    border: 0px;
+}
+
+.zero-radius{
+    border-radius: 0px;
+    border: 0px;
+}
+
+.spin{
+    transform: rotate(180deg);
+}
+
+.margin {
+    margin-left: 13px;
+}
+
+
+// ========================== desktop view ====================================
+
+@media only screen and (min-width: 900px) {
+
+    .background{
+        box-shadow:  0px 4px 4px #EFAC48;
+        background-color: #f5f5f5;
+        margin-right: auto;
+        margin-left: auto;
+        width: 95%;
+        margin-top: 20%;
+        margin-bottom: 25%;
+    }
+
+}

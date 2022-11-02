@@ -1,0 +1,306 @@
+
+
+.dashboard {
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 100%;
+    // padding: 10px;
+}
+
+.orange-part {
+    background-color: #EFAC48;
+    width: 100%;
+    height: 30vh;
+}
+
+table {
+    margin-bottom: 3%;
+    height: auto;
+}
+
+.gallery {
+    margin-left: 12px;
+}
+
+.card {
+    background-color: #F5F5F5;
+    box-shadow: 0px 4px 4px #EFAC48;
+    margin: 10px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.block {
+    background-color: #EFAC48;
+}
+
+ 
+@media only screen and (min-width: 300px) and (max-width: 600px) {
+
+    .cards {
+        //border: 2px solid green; 
+        margin-top: -45%;
+        height: auto;
+        
+    }
+
+    .card {
+        background-color: #F5F5F5;
+        box-shadow: 0px 4px 4px #EFAC48;
+        margin: 10px;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+}
+
+@media only screen and (min-width: 601px) and (max-width: 800px) {
+
+    .cards {
+        //border: 2px solid green; 
+        margin-top: -25%;
+        height: auto;
+    }
+
+    .card {
+        background-color: #F5F5F5;
+        box-shadow: 0px 4px 4px #EFAC48;
+        margin: 10px;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+}
+
+@media only screen and (min-width: 801px) {
+    .card {
+        background-color: #F5F5F5;
+        box-shadow: 0px 4px 4px #EFAC48;
+        margin: 10px;
+        width: 30%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .cards {
+        display: flex;
+        margin-top: -5%;
+        height: auto;
+    }
+
+}
+
+
+
+
+// table {
+//     margin-left: 2%;
+// }
+.bt-orange{
+
+ color: black;
+ border: 0px;
+
+background: #EFAC48;
+border-radius: 5px;
+}
+.bt-orange:hover{
+
+ color: black;
+ border: 0px;
+
+background: #EFAC48;
+border-radius: 5px;
+}
+
+
+
+
+@media screen and (min-width: 769px) {
+	.container {
+	  width: 70vw;
+	}
+  }
+  
+	.card-registration .select-arrow {
+	  top: 13px;
+	}
+  
+	.gradient-custom {
+	  margin-top: 2vh;
+	  margin-bottom: 10vh;
+	}
+  
+	button {
+	  box-sizing: border-box;
+	  background: #E0C5AC;
+	  border: none;
+	  border-radius: 10px;
+	  line-height: 16px;
+	  text-align: center;
+	  width: 186px;
+	  height: 47px;
+	  text-align: center;
+	  color: #FFFFFF;
+	}
+  
+  
+  
+  
+  
+	element.style {
+	  border-radius: 15px;
+	}
+  
+	@media screen and (min-width: 769px) and (min-width: 768px) {
+	  .px-md-5[_ngcontent-iat-c49] {
+		padding-right: 0.5rem !important;
+	  }
+	}
+  
+	@media (min-width: 768px) {
+	  .px-md-5 {
+		padding-right: 3rem !important;
+		padding-left: 3rem !important;
+	  }
+  
+	  .py-5 {
+		padding-top: .5rem !important;
+		padding-bottom: 3rem !important;
+	  }
+	}
+  
+	.c {
+	  background-color: red;
+	}
+  
+	html,
+	body {
+	  margin: 0px;
+	  height: 100%;
+	}
+  
+  
+	.box {
+	  background: red;
+	  position: absolute;
+	  top: 0px;
+	  right: 0px;
+	  bottom: 0px;
+	  left: 0px;
+	}
+  
+  
+  
+  
+	#radius-shape-1 {
+	  height: 100%;
+	  width: 100%;
+	  top: -60%;
+	  left: -130%;
+	  // background: radial-gradient(#44006b, #ad1fff);
+	  overflow: hidden;
+	}
+  
+	.background-radial-gradient {
+	  background-color: #F5F5F5;
+	  height: 150%;
+	}
+  
+	//Tablet
+	@media screen and (min-width: 768px)and (max-width:768px) {
+	  .container {
+		width: 65vw;
+	  }
+	}
+  
+	@media screen and (min-width: 375px) {
+	  .container {
+		width: 100vw;
+	  }
+	}
+  
+	body {
+	  background-color: #F5F5F5;
+	  height: auto;
+	  padding: auto;
+	  margin: auto;
+	  
+	}
+  
+
+	.background{
+		box-shadow:  0px 4px 4px #EFAC48;;
+	}
+	
+	.bt-orange{
+		width: 200px;
+		height: 40px;
+	
+	
+	background: #EFAC48;
+	border-radius: 5px;
+	}
+	
+	
+	.orange{
+		color: #EFAC48;
+	   
+	}
+	h1{
+		font-size: 40px;
+		text-shadow: 0px 2px 2px#bcbcbc;
+		text-align: center;
+	}
+	.cen{
+		text-align: center;
+	}
+	
+	.mgr{
+		margin-left: 5px;
+	  
+	}
+	
+	
+	.bg-ora{
+		color: #EFAC48;
+	}
+  
+	
+	
+	.ratingT{
+    border: none;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px #EFAC48;
+    border-radius: 2px;
+    }
+
+
+
+.boxes{
+    padding: 1em;
+    background-color: #F5F5F5;
+}
+input{
+    border: 0px;
+}
+
+#co{
+    width: 140px;
+    height: 40px;
+  
+  border: 0px;
+  background: #EFAC48;
+  border-radius: 5px;
+  }

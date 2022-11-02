@@ -1,0 +1,188 @@
+<p-toast  position="top-center"></p-toast>
+<app-navbarc></app-navbarc>
+
+
+
+<p-confirmDialog #cd [breakpoints]="{'960px': '75vw', '640px': '100vw'}"  [style]="{width: '30vw'}">
+  <ng-template pTemplate="header">
+      <h3>Confirm</h3>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <div class="flex" position="center" >
+      <button type="button" pButton id="co" class="co"  icon="pi pi-times" label="No" (click)="cd.reject()"></button>
+      
+      
+      <button type="button" pButton id="co" class="co" icon="pi pi-check" label="Yes" (click)="cd.accept()"></button>
+    </div>
+    </ng-template>
+</p-confirmDialog>
+
+
+  <div class="container px-4 py-2 px-md-5 text-lg-start my-1 col-md-12 col-lg-12 col-sm-12">
+    <div class="row justify-content-center align-items-center">
+      <div class="card end bg-glass px-4 py-5 px-md-5 w-10xl background" style="border-radius: 15px" >
+       
+        <form [formGroup]="jobform" (ngSubmit)=" confirm()" >
+
+          <!-- category -->
+          <div class="form-group">
+            <h2 class="mb-3 text-center cen">Enter Job Details</h2>
+              <div class="d-grid">
+                <select 
+                  class="submit text-black custom-select mb-2 droppie focus:outline-none border-radius:2px "
+                  (change)="select($event)"
+                  formControlName="category"
+                  [ngClass]="{ 'is-invalid': submitted && f['category'].errors }"
+                  >
+                  <option value="">Choose a contractor category </option>
+                  <option value={{i}} *ngFor="let category of category; index as i" [ngValue]="category">
+                    {{ category.category }}
+             
+                  </option>
+               
+                </select>
+                <!-- error block -->
+                <div *ngIf="submitted && f['contractor'].errors" class="invalid-feedback">
+                  <div *ngIf="f['contractor'].errors['required']">
+                    <sup>*</sup>Submit the contractor category required
+                  </div>
+                </div>
+     
+              </div>
+           
+
+          </div>
+<!-- subcategopry -->
+          <div class="form-group mt-1">
+            <div class="row custom-wrapper">
+                <div class="d-grid">
+                  <select 
+                    class="submit text-black custom-select mb-3 droppie focus:outline-none border-radius:2px"
+                    
+                    formControlName="subCategory"
+                    placeholder ="Choose subcategory"
+                  >
+                    <option value="">Choose a subcategory</option>
+                    <option *ngFor="let subcategory of sub" [ngValue]="subcategory">
+                      {{ subcategory }}
+                    </option>
+                  </select>
+                  <!-- error block -->
+                  <div *ngIf="submitted && f['subcategopry'].errors" class="invalid-feedback">
+                    <div *ngIf="f['subcategopry'].errors['required']">
+                      <sup>*</sup>Submit the required subcategory 
+                    </div>
+                  </div>
+       
+                </div>
+            </div>
+        </div>
+
+<!-- location -->
+  
+       <div class="form-group mt-1">
+            <div class="row custom-wrapper">
+                <div class="d-grid">
+                  <select 
+                    class="submit text-black custom-select mb-3 droppie focus:outline-none border-radius:2px"
+                    
+                    formControlName="location"
+                    placeholder ="Choose location"
+                  >
+                    <option value="">Choose a location</option>
+                    <option *ngFor="let location of locations" [ngValue]="location">
+                      {{ location }}
+                    </option>
+                  </select>
+                  <!-- error block -->
+                  <div *ngIf="submitted && f['location'].errors" class="invalid-feedback">
+                    <div *ngIf="f['location'].errors['required']">
+                      <sup>*</sup>Submit the required location 
+                    </div>
+                  </div>
+       
+                </div>
+            </div>
+        </div>
+
+      <!-- description -->
+<div class = "form-group">
+  <div class="mb-6">
+    <label
+      for="message"
+      class="block are mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
+      >Job description</label
+    >
+    <textarea
+      id="message"
+      rows="4"
+      class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 square-lg border border-gray-300 focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500"
+      placeholder="Describe your problem here..."
+      formControlName ="description"
+    ></textarea>
+  </div>
+</div>
+ 
+<!-- image -->
+      <div class ="form-group mb-3">
+          <img [src]="preview" alt="">
+        <input
+          class="block cal text-black w-full text-sm text-gray-900 bg-gray-50 square-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+          id="file_input"
+          type="file"
+          formControlName="image"
+          (change)="handleFileInput($event)"
+        />
+      </div>
+
+      <!-- date -->
+
+      <div class ="form-group">
+      <div class="relative">
+        <!-- <div
+          class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"
+         
+        >
+          <svg
+            aria-hidden="true"
+            class="w-5 h-5 text-gray-500 dark:text-gray-400"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </div> -->
+        <!-- <input
+          datepicker
+          datepicker-buttons
+          type="text"
+          datepicker-orientation=" bottom right"
+          formControlName="job_date"
+          class="bg-gray-50 border mt-4 border-gray-300 text-gray-900 sm:text-sm square-lg focus:ring-blue-500 focus:border-blue-500 block w-100 pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="Select date"
+       
+        /> -->
+        <input type="date" name="" id="" formControlName="job_date">
+      </div>
+    </div>
+
+<!-- submit button -->
+<div class="form-group" >
+  <button
+    type="submit"
+    class="submit mt-4 text-black bt-orange hover:bg-orange-200 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800"
+    (click)="onSubmit"
+  >
+    Submit
+  </button>
+</div>
+        </form>
+      </div>
+    </div>
+  </div>
+

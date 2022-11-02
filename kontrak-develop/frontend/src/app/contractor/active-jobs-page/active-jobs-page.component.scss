@@ -1,0 +1,125 @@
+ main {
+   height: 100vh;
+   width: 100%;
+   // background-color: #EFAC48;
+ }
+
+
+
+
+ .topSection {
+   height: 30%;
+   width: 100%;
+   background-color: #EFAC48;
+ }
+
+ .card2 {
+   box-shadow: 0px 6px 6px #EFAC48;
+   border-radius: 10px;
+ }
+
+
+ .middleSection {
+   height: 40%;
+   width: 100%;
+   margin-top: -59%;
+ }
+
+ .bottomSection {
+   height: 45%;
+   width: 100%;
+   margin-top: 70px;
+ }
+
+ Section {
+   width: 90%;
+   margin: auto;
+ }
+
+ .cards {
+   margin-top: 10%;
+   width: 90%;
+  //  margin-bottom: 5px;
+   margin-left: auto;
+   margin-right: auto;
+ }
+
+ .card {
+   margin-bottom: 20px;
+   background-color: white;
+   box-shadow: 0px 4px 4px #EFAC48;
+ }
+
+ p {
+   font-weight: bold;
+ }
+
+ .normalText {
+   font-weight: normal;
+ }
+
+ // .buttondiv {
+ //    border: 2px solid green;
+ // }
+
+ button {
+   background-color: #EFAC48;
+ }
+
+ .textpart {
+   margin-bottom: 40px;
+ }
+
+ .card-body {
+   text-align: center;
+ }
+
+ h2 {
+   text-align: center;
+ }
+
+
+ @media screen and (min-width: 900px) {
+
+   .middleSection {
+     height: 40%;
+     width: 100%;
+     margin-top: -15%;
+    
+
+   }
+
+   .bottomSection {
+     height: 45%;
+     width: 60%;
+     margin-top: -10%;
+   }
+
+   .card2 {
+     box-shadow: 0px 4px 4px #EFAC48;
+     background-color: white;
+     margin-bottom: 5%;
+   }
+
+   .card {
+     display: flex;
+     width: 45%;
+     box-shadow: 0px 4px 4px #EFAC48;
+     background-color: white;
+   }
+
+   .cards {
+
+     display: flex;
+     justify-content: space-around;
+     margin-top: 10%;
+     width: 100%;
+     margin-bottom: 10px;
+     margin-left: auto;
+     margin-right: auto;
+   }
+
+
+ }
+
+

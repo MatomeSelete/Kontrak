@@ -1,0 +1,205 @@
+<app-navbar></app-navbar>
+<!--==========================alerts=============================-->
+<p-toast  position="top-center"></p-toast>
+
+
+
+<p-confirmDialog #cd [breakpoints]="{'960px': '75vw', '640px': '100vw'}"  [style]="{width: '30vw'}">
+  <ng-template pTemplate="header">
+     
+  </ng-template>
+  <ng-template pTemplate="footer">
+      <button type="button" pButton  id="co" class="co" icon="pi pi-times" label="No" (click)="cd.reject()"></button>
+      <button type="button" pButton id="co" class="co" icon="pi pi-check" label="Yes" (click)="cd.accept()"></button>
+  </ng-template>
+</p-confirmDialog>
+<!-- ============================ dashboard============================-->
+<body class="dashboard">
+  <div class="orange-part"></div>
+
+  <div class="card-table">
+    <div class="cards">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title text-center">Total jobs</h2>
+
+          <p class="card-text">{{work.length}}</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title text-center">Job requests</h2>
+
+          <p class="card-text">{{Users.length}}</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body text-center">
+          <h2 class="card-title text-center">Average rating</h2>
+
+          <p class="card-text">{{average | number : '1.1-1'}}</p>
+        </div>
+      </div>
+    </div>
+
+    <br />
+
+    <!-- ============================ table ============================-->
+    <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
+      <table
+        class="w-full text-sm text-left text-gray-500 dark:text-gray-400 table-striped"
+      >
+        <thead
+          class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+        >
+          <tr>
+            <th scope="col" class="py-3 px-6">
+              #
+            </th>
+            <th scope="col" class="py-3 px-6">
+              Name
+            </th>
+            <th scope="col" class="py-3 px-6">
+              Phone
+            </th>
+            <th scope="col" class="py-3 px-6">
+              Email
+            </th>
+            <th scope="col" class="py-3 px-6"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            class="bg-white border-b dark:bg-gray-900 dark:border-gray-700"
+            *ngFor="let user of Users; let i = index"
+          >
+            <th
+              scope="row"
+              class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              {{ i+1}}
+            </th>
+            <td class="py-4 px-6">
+              {{ user.firstname }}
+            </td>
+            <td class="py-4 px-6">
+              {{ user.phonenumber }}
+            </td>
+            <td class="py-4 px-6">
+              {{ user.email }}
+            </td>
+            <td class="py-4 px-6">
+              <button class="bt-orange" (click)="modal() ;call(i)">view</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+
+<!-- ============================ details modal============================-->
+<div>
+  <button #myDiv hidden data-modal-toggle="defaultModal1">view</button>
+
+  <!-- Main modal -->
+  <div
+    id="defaultModal1"
+    tabindex="-1"
+    aria-hidden="true"
+    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center"
+  >
+    <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
+      <!-- Modal content -->
+      <div class="relative bg-gray-50 rounded-lg dark:bg-gray-700">
+        <!-- Modal header -->
+        <div
+          class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600"
+        >
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+            Description
+          </h3>
+        </div>
+        <!-- Modal body -->
+        <div class="p-6 space-y-6">
+          <div class="form-group w-full">
+            {{oneUser.description}}
+          </div>
+          <div>
+            <button class="bt-orange" (click)="galleryModal()">Gallery</button>
+          </div>
+        </div>
+
+        <!-- Modal footer -->
+        <div
+          class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600"
+        >
+          <button
+            data-modal-toggle="defaultModal1"
+            type="button"
+            class="bt-orange"
+            (click)="confirmaccept()"
+          >
+            Accept
+          </button>
+          <button
+            data-modal-toggle="defaultModal1"
+            type="button"
+            class="bt-orange"
+            (click)="confirmdecline()"
+          >
+            Decline
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================ gallery modal============================-->
+<div>
+  <button #gallery hidden data-modal-toggle="defaultModal2">view</button>
+
+  <!-- Main modal -->
+  <div
+    id="defaultModal2"
+    tabindex="-32"
+    aria-hidden="true"
+    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center"
+  >
+    <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
+      <!-- Modal content -->
+      <div class="relative bg-gray-50 rounded-lg dark:bg-gray-700">
+        <!-- Modal header -->
+        <div
+          class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600"
+        >
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+            Description
+          </h3>
+        </div>
+        <!-- Modal body -->
+        <div class="p-6 space-y-6">
+          <div class="form-group w-full">
+            <img src="{{oneUser.jobimg}}" alt="" />
+          </div>
+
+          <!-- Modal footer -->
+          <div
+            class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600"
+          >
+            <button
+              data-modal-toggle="defaultModal2"
+              type="button"
+              class="bt-orange"
+            >
+              close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

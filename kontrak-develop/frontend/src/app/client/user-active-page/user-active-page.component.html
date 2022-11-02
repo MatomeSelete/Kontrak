@@ -1,0 +1,71 @@
+<app-navbarc></app-navbarc>
+<main>
+
+    <!-- <div class="container"> -->
+        <Section class="topSection">
+
+        </Section>
+
+        <Section class="middleSection">
+            <div class="cards">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="" style="text-align: center;" >Active Job </h2>
+                        <br>
+                        <p class="card-text"> {{numberofActive}}</p>
+                        <!--{{work.length}}-->
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="" style="text-align: center;">Pending jobs</h2>
+                        <br>
+                        <p class="card-text"> {{numberofPending}} </p> <!-- {{Users.length}} -->
+                    </div>
+                </div>
+
+            </div>
+        </Section>
+
+        <section class="bottomSection">
+            <ng-container *ngFor="let job of Jobs; let x = index">
+            <div class="card2" style="padding: 30px;"  *ngIf="job.status === 'active'">
+                <div class="card-body text-center" >
+                    <h2 class="" style="text-align: center;" >Average rating</h2>
+
+                    <div class="textpart">
+                        <!--  -->
+                        <div>
+                            <p class="card-text">
+                                Status
+                                <br>
+                                <span class="normalText"> {{job.status }} </span>
+                                <!--{{ job.status }}-->
+                            </p>
+                            <p class="card-text">
+                                Discription
+                                <br>
+                                <span class="normalText"> {{job.description }} </span>
+                            </p>
+                            <p class="card-text">
+                                Contractor
+                                <br>
+                                <span class="normalText">{{job.firstname }}</span>
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="buttondiv">
+                        <button type="button" class="btn " routerLink="/client/tracker/{{job.job_id}}">Track Job</button>
+                    </div>
+
+                </div>
+            </div>
+        </ng-container>
+        </section>
+
+    <!-- </div> -->
+   
+</main>

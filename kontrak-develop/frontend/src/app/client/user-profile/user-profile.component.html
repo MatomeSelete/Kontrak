@@ -1,0 +1,341 @@
+
+<app-navbarc></app-navbarc>
+<!--==========================alerts=============================-->
+<p-toast  position="top-center"></p-toast>
+
+
+<p-confirmDialog #cd [breakpoints]="{'960px': '75vw', '640px': '100vw'}"  [style]="{width: '30vw'}">
+  <ng-template pTemplate="header">
+     
+  </ng-template>
+  <ng-template pTemplate="footer">
+      <button type="button" pButton  id="co" class="co" icon="pi pi-times" label="No" (click)="cd.reject()"></button>
+      <button type="button" pButton id="co" class="co" icon="pi pi-check" label="Yes" (click)="cd.accept()"></button>
+  </ng-template>
+</p-confirmDialog>
+
+<div class="px-4 py-5 px-md-5 text-lg-start my-5 col-md-12 col-lg-12 col-sm-12">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card-body p-4 p-md-5">
+          <form [formGroup]="Form">
+            <div>
+              <div class="background boxes">
+                <div class="form-group cen">
+                  <label for="">{{userProfile.firstname}}    </label>
+                 
+                  <div class="flex justify-around">
+                    
+                  </div>
+                </div>
+              </div>
+              <br />
+              <h2 class="cen">Bio</h2>
+              <div class="card-body p-4 p-md-5 background">
+                <div class="background boxes mb-2">
+                  <div class="flex justify-between">
+                    <div>  <div class="form-group ">
+                      <label for="g" class="form-group">Name: &nbsp; </label> <span>{{userProfile.firstname}}</span>
+                    </div></div>
+                    <div>
+                      <!-- Modal toggle -->
+                      <!--<button class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button" data-modal-toggle="defaultModal"> -->
+                      <svg
+                        data-modal-toggle="defaultModal1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-pencil orange"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"
+                        />
+                      </svg>
+  
+                      <!-- Main modal -->
+                      <div
+                        id="defaultModal1"
+                        tabindex="-1"
+                        aria-hidden="true"
+                        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center"
+                      >
+                        <div
+                          class="relative p-4 w-full max-w-2xl h-full md:h-auto"
+                        >
+                          <!-- Modal content -->
+                          <div
+                            class="relative bg-gray-50 rounded-lg dark:bg-gray-700"
+                          >
+                            <!-- Modal header -->
+                            <div
+                              class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600"
+                            >
+                              <h3
+                                class="text-xl font-semibold text-gray-900 dark:text-white"
+                              >
+                                update 
+                                Name
+                              </h3>
+                            </div>
+                            <!-- Modal body -->
+                            <div class="p-6 space-y-6">
+                              <div class="form-group w-full">
+                                <input
+                                  type="text"
+                                  formControlName="firstname"
+                                  
+                                  id=""
+                                  placeholder={{userProfile.firstname}}
+                                /><br /><br />
+                            
+                              </div>
+                            </div>
+                            <!-- Modal footer -->
+                            <div
+                              class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600"
+                            >
+                              <button
+                                data-modal-toggle="defaultModal1"
+                                type="button"
+                                class="bt-orange"
+                                (click)="confirmName()"
+                              >
+                                Save
+                              </button>
+                              <button
+                                data-modal-toggle="defaultModal1"
+                                type="button"
+                                class="bt-orange"
+                              >
+                                Cancel
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+  
+                 
+
+
+                </div>
+       
+            
+                <div class="background boxes mb-2">
+                  <div class="form-group flex justify-between">
+                    <label for="g">Password:****** </label>
+               
+                    <div>
+                      <!-- Modal toggle -->
+                      <!--<button class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button" data-modal-toggle="defaultModal"> -->
+                      <svg
+                        data-modal-toggle="defaultModal2"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-pencil orange"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"
+                        />
+                      </svg>
+  
+                      <!-- Main modal -->
+                      <div
+                        id="defaultModal2"
+                        tabindex="-1"
+                        aria-hidden="true"
+                        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center"
+                      >
+                        <div
+                          class="relative p-4 w-full max-w-2xl h-full md:h-auto"
+                        >
+                          <!-- Modal content -->
+                          <div
+                            class="relative bg-white rounded-lg shadow dark:bg-gray-700"
+                          >
+                            <!-- Modal header -->
+                            <div
+                              class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600"
+                            >
+                              <h3
+                                class="text-xl font-semibold text-gray-900 dark:text-white"
+                              >
+                                update password
+                              </h3>
+                            </div>
+                            <!-- Modal body -->
+                            <div class="p-6 space-y-6">
+                            
+                              <div class="form-group">
+                              
+                                <input
+                                  type="password"
+                                  formControlName="newPassword"
+                                
+                                  id=""
+                                  placeholder="New password"
+                                />
+                                <input
+                                  type="password"
+                                  formControlName="confirmPassword"
+                               
+                                  id=""
+                                  placeholder="confirm password"
+                                />
+                              </div>
+                          
+                            </div>
+                            <!-- Modal footer -->
+                            <div
+                              class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600"
+                            >
+                              <button
+                                data-modal-toggle="defaultModal2"
+                                type="button"
+                                class="bt-orange"
+                                (click)="confirmPass()"
+                              >
+                                save
+                              </button>
+                              <button
+                                data-modal-toggle="defaultModal2"
+                                type="button"
+                                class="bt-orange"
+                              >
+                                cancel
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="background boxes">
+                  <div class="flex justify-between">
+                    <div> <div class="form-group">
+                      <label for="g" class="form-group">email: &nbsp; </label> <span>{{userProfile.email}}</span>
+                      <br />
+                      <label for="">Phone: &nbsp; </label> <span>{{userProfile.phonenumber}}</span>
+                    </div></div>
+                    <div>
+                      <!-- Modal toggle -->
+                      <!--<button class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button" data-modal-toggle="defaultModal"> -->
+                      <svg
+                        data-modal-toggle="defaultModal5"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-pencil orange"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"
+                        />
+                      </svg>
+  
+                      <!-- Main modal -->
+                      <div
+                        id="defaultModal5"
+                        tabindex="-1"
+                        aria-hidden="true"
+                        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center"
+                      >
+                        <div
+                          class="relative p-4 w-full max-w-2xl h-full md:h-auto"
+                        >
+                          <!-- Modal content -->
+                          <div
+                            class="relative bg-gray-50 rounded-lg dark:bg-gray-700"
+                          >
+                            <!-- Modal header -->
+                            <div
+                              class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600"
+                            >
+                              <h3
+                                class="text-xl font-semibold text-gray-900 dark:text-white"
+                              >
+                                update contact details
+                              </h3>
+                            </div>
+                            <!-- Modal body -->
+                            <div class="p-6 space-y-6">
+                              <div class="form-group w-full">
+                                <input
+                                  type="text"
+                                  formControlName="email"
+                                  
+                                  id=""
+                                  placeholder={{userProfile.email}}
+                                /><br /><br />
+                                <input
+                                  type="text"
+                                  formControlName="phonenumber"
+                                
+                                  id=""
+                                  placeholder={{userProfile.phonenumber}}
+                                />
+                              </div>
+                            </div>
+                            <!-- Modal footer -->
+                            <div
+                              class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600"
+                            >
+                              <button
+                                data-modal-toggle="defaultModal5"
+                                type="button"
+                                class="bt-orange"
+                                (click)="confirmContacts()"
+                              >
+                                save
+                              </button>
+                              <button
+                                data-modal-toggle="defaultModal5"
+                                type="button"
+                                class="bt-orange"
+                              >
+                                cancel
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+  
+                 
+                </div>
+                  
+              </div>
+
+                
+
+            </div>
+
+
+              
+
+                    
+                  
+                
+               
+  
+               
+           
+             
+                  
+          </form>
+       
+        </div>
+      </div>
+    </div>
+
+ 

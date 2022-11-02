@@ -1,0 +1,189 @@
+
+<!--==========================alerts=============================-->
+
+<p-toast  position="top-center"></p-toast>
+<app-navbarc></app-navbarc>
+
+
+
+<p-confirmDialog #cd [breakpoints]="{'960px': '75vw', '640px': '100vw'}"  [style]="{width: '30vw'}">
+  <ng-template pTemplate="header">
+      
+  </ng-template>
+  <ng-template pTemplate="footer">
+      <button type="button" pButton  class="co" icon="pi pi-times" label="No" (click)="cd.reject()"></button>
+      <button type="button" pButton class="co" icon="pi pi-check" label="Yes" (click)="cd.accept()"></button>
+  </ng-template>
+</p-confirmDialog>
+
+<div class="px-4 py-5 px-md-5 text-lg-start my-5 col-md-12 col-lg-12 col-sm-12">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-12 col-lg-9 col-xl-7">
+      <div class="card-body p-4 p-md-5">
+        <form [formGroup]="Form" (ngSubmit)="confirm()">
+          <div>
+            <!-- =============================== the stars ===================================-->
+            <div class="row">
+              <div class="flex" style="margin-bottom: 1em;">
+                <div class="ratingTxt">Rate:</div>
+                <div class="rate">
+                  <input
+                    type="radio"
+                    (change)="yes($event)"
+                    id="star5"
+                    name="rate"
+                    value="5"
+                  />
+                  <label for="star5" title="text">5 stars</label>
+                  <input
+                    type="radio"
+                    (change)="yes($event)"
+                    id="star4"
+                    name="rate"
+                    value="4"
+                  />
+                  <label for="star4" title="text">4 stars</label>
+                  <input
+                    type="radio"
+                    (change)="yes($event)"
+                    id="star3"
+                    name="rate"
+                    value="3"
+                  />
+                  <label for="star3" title="text">3 stars</label>
+                  <input
+                    type="radio"
+                    (change)="yes($event)"
+                    id="star2"
+                    name="rate"
+                    value="2"
+                  />
+                  <label for="star2" title="text">2 stars</label>
+                  <input
+                    type="radio"
+                    (change)="yes($event)"
+                    id="star1"
+                    name="rate"
+                    value="1"
+                  />
+                  <label for="star1" title="text">1 star</label>
+                </div>
+              </div>
+            </div>
+            <!-- =======================================the name field  ====================================-->
+
+            <div class="form-group mb-4">
+              <input
+                type="text"
+                formControlName="name"
+                placeholder="name"
+                class="input w-full ratingT"
+                [ngClass]="{
+'is-invalid': submitted && f['name'].errors
+}"
+              />
+              <div
+                *ngIf="submitted && f['name'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['name'].errors['required']">
+                  First name is required
+                </div>
+              </div>
+            </div>
+            <!-- ===========================================the comment area  ================================-->
+            <div>
+              <div class="form-group">
+                <textarea
+                  id="message"
+                  rows="4"
+                  formControlName="comment"
+                  class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 ratingT border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="Comment......."
+                ></textarea>
+              </div>
+
+              <br />
+            </div>
+
+            <!--========================================= the submit button=============================== -->
+
+            <div class="form-group cen">
+              <button
+                type="submit"
+                class="submit bt-orange btn-block text-black"
+                (click)="confirm()"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- =======================past reviews section================= -->
+      <div class="row justify-content-center">
+        <div
+          class="col-lg-12 col-md-12 col-sm-12 background mb-4"
+          *ngFor="let review of reviews"
+        >
+          <div class="text"></div>
+          {{review.firstname}} <br />
+          <!-- {{review.rating}} <br /> -->
+          <div *ngIf=" review.rating == 5">
+            <i class="fa-solid fa-star orange"></i>
+            <i class="fa-solid fa-star orange"></i>
+            <i class="fa-solid fa-star orange"></i>
+            <i class="fa-solid fa-star orange"></i>
+            <i class="fa-solid fa-star orange"></i>
+          </div>
+          <div *ngIf=" review.rating == 4">
+            <i class="fa-solid fa-star orange"></i>
+            <i class="fa-solid fa-star orange"></i>
+            <i class="fa-solid fa-star orange"></i>
+            <i class="fa-solid fa-star orange"></i>
+            <i class="fa-solid fa-star grey "></i>
+          </div>
+          <div *ngIf=" review.rating == 3">
+            <i class="fa-solid fa-star orange"></i>
+            <i class="fa-solid fa-star orange"></i>
+            <i class="fa-solid fa-star orange"></i>
+            <i class="fa-solid fa-star grey "></i>
+            <i class="fa-solid fa-star grey "></i>
+
+          </div>
+          <div *ngIf=" review.rating == 2">
+            <i class="fa-solid fa-star orange"></i>
+            <i class="fa-solid fa-star orange"></i>     
+            <i class="fa-solid fa-star grey "></i>
+            <i class="fa-solid fa-star grey "></i>
+            <i class="fa-solid fa-star grey "></i>
+            
+          </div>
+          <div *ngIf=" review.rating == 1">
+            <i class="fa-solid fa-star orange"></i>
+            <i class="fa-solid fa-star grey "></i>
+            <i class="fa-solid fa-star grey "></i>
+            <i class="fa-solid fa-star grey "></i>
+            <i class="fa-solid fa-star grey "></i>
+          </div>
+          
+          
+          {{review.comment}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

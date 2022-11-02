@@ -1,0 +1,187 @@
+<!--==========================alerts=============================-->
+
+<p-toast  position="top-center"></p-toast>
+<app-navbarc></app-navbarc>
+
+
+
+<p-confirmDialog #cd [breakpoints]="{'960px': '75vw', '640px': '100vw'}"  [style]="{width: '20vw'}">
+  <ng-template pTemplate="header">
+
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <div class="flex" position="center" >
+      <button type="button" pButton class="co" id="co"  icon="pi pi-times" label="No" (click)="cd.reject()"></button>
+      
+      
+      <button type="button" pButton  class="co" id="co"  icon="pi pi-check" label="Yes" (click)="cd.accept()"></button>
+    </div>
+    </ng-template>
+</p-confirmDialog>
+
+<h1 class = " font-extralight ">  Job tracker</h1>
+
+
+<!-- a drag and drop  -->
+<div class="flex w-full">
+  <div class="grid h-20 w-1/4  flex-grow card bg-base-200 square-box place-items-center mb-2 don">
+    
+    <div class="example-container">
+      <h2>To do</h2>
+
+  
+
+      
+        <div
+        cdkDropList
+        #todoList="cdkDropList"
+        [cdkDropListData]="todo"
+        [cdkDropListConnectedTo]="[doneList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div class="example-box" *ngFor="let item of todo" cdkDrag>
+          {{ item.task_name }}
+        </div>
+      
+      
+      </div>
+      
+      </div>
+    
+    </div>
+ 
+    <div class="divider divider-horizontal divide"></div>
+ 
+
+  <div class="grid h-20 flex-grow card bg-base-300 square-box place-items-center mb-2  don ">
+    <div class="example-container dragd w-full ">
+      <h2>Done</h2>
+
+      <div
+        cdkDropList
+        #doneList="cdkDropList"
+        [cdkDropListData]="done"
+        [cdkDropListConnectedTo]="[todoList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div class="example-box" *ngFor="let item of done" cdkDrag>
+          {{ item.task_name }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- submit task  modal -->
+
+<div class = "col-md-12">
+
+    <!-- Modal toggle -->
+    <div class="flex justify-between mt-6 px-2">
+      <button
+        class=" block text-black btn-sm  bt-orange2  hover:bg-gray-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-small rounded-lg text-sm px-3  text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        type="button"
+        data-modal-toggle="authentication-modal"
+      >
+       + Add New Task
+      </button>
+      <button
+        type="button"
+        (click)="reviews()"
+        class="focus:outline-none text-black btn-sm  bt-orange2  hover:bg-gray-500 focus:ring-4 focus:ring-yellow-300 font-small rounded-lg text-sm px-3 mr-2  dark:focus:ring-yellow-900"
+      
+       >
+        Write a Review
+      </button>
+    </div>
+
+    <!-- Main modal -->
+    <div
+      id="authentication-modal"
+      tabindex="-1"
+      aria-hidden="true"
+      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center"
+    >
+      <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+          <button
+            type="button bg-yellow-400" 
+            class="absolute top-3 right-2.5  text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+            data-modal-toggle="authentication-modal"
+            
+          >
+            <svg
+              aria-hidden="true"
+              class="w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <span class="sr-only">Close modal</span>
+          </button>
+          <div class="py-6 px-6 lg:px-8">
+
+              <div>
+                <label
+                  for="message"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
+                  >Enter task</label
+                >
+                <textarea
+                  id="message"
+                  rows="4"
+                  class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="Your task..."
+                  [(ngModel)]="task_name"
+                ></textarea>
+              </div> 
+              <div
+                *ngIf="submitted && f['task'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['task'].errors['required']">
+                  task is required
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                (click)="confirm()"
+                class="w-full bt-orange text-black bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800"
+                data-modal-toggle="authentication-modal"
+              >
+                Post
+              </button>
+            <!-- </form> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+        

@@ -1,0 +1,60 @@
+{
+  "name": "backend",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Starter project using Express , Postgres and Docker ",
+  "main": "config.js",
+  "scripts": {
+    "test": "xo",
+    "lint": "xo",
+    "format": "xo --fix",
+    "start": "nodemon server.js",
+    "bankai": "nodemon server.js",
+    "dev": "start ",
+    "migrate": "node ./bin/migrate.js",
+    "migrate:create": "migrate create --migrations-dir='./src/migrations'"
+  },
+  "keywords": [
+    "express",
+    "postgres"
+  ],
+  "author": "DA",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "client-sessions": "^0.8.0",
+    "cloudinary": "^1.32.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
+    "express": "^4.17.1",
+    "file-system": "^1.2.2",
+    "formidable": "^2.0.1",
+    "helmet": "^4.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "migrate": "^1.7.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.7.8",
+    "pg": "^8.7.1",
+    "rand-token": "^1.0.1",
+    "sql-template-strings": "^2.2.2",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "xo": "^0.52.4"
+  },
+  "xo": {
+    "prettier": true,
+    "space": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HugoDF/express-postgres-starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HugoDF/express-postgres-starter/issues"
+  },
+  "homepage": "https://github.com/HugoDF/express-postgres-starter#readme"
+}

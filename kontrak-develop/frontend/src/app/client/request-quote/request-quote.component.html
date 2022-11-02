@@ -1,0 +1,259 @@
+<!--==========================alerts=============================-->
+<p-toast position="top-center"></p-toast>
+<app-navbarc></app-navbarc>
+
+
+
+<p-confirmDialog #cd [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '30vw'}">
+  <ng-template pTemplate="header">
+
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <div class="flex" position="center">
+      <button type="button" pButton id="co" class="co" icon="pi pi-times" label="No" (click)="cd.reject()"></button>
+
+
+      <button type="button" pButton id="co" class="co" icon="pi pi-check" label="Yes" (click)="cd.accept()"></button>
+    </div>
+  </ng-template>
+</p-confirmDialog>
+<ng-container>
+
+  <div class="main">
+
+    <div class="cards" *ngFor="let contractor of contractorName; let x = index">
+      <!-- *ngFor="let contractor of contractorName; let x = index" -->
+
+      <div class="card">
+        <h1> {{ contractor.firstname }}</h1>
+
+        <img src={{contractor.images}} class="card-img-top" alt="...">
+        <div class="card-body">
+
+          <h1 class="card-text smaller"> {{contractor.category_name}} </h1>
+          <h6 class="card-text"> {{contractor.sub_catname}} </h6>
+
+          <h3>Call out fee: {{contractor.calloutfee}}</h3>
+          <h3 class="ratings"> Rating:
+            <div class="stars">
+
+              <div *ngIf="average2 === 5">
+                <i class="fa-solid fa-star orange"></i>
+                <i class="fa-solid fa-star orange"></i>
+                <i class="fa-solid fa-star orange"></i>
+                <i class="fa-solid fa-star orange"></i>
+                <i class="fa-solid fa-star orange"></i>
+              </div>
+              <div *ngIf='average2 === 4'>
+                <i class="fa-solid fa-star orange"></i>
+                <i class="fa-solid fa-star orange"></i>
+                <i class="fa-solid fa-star orange"></i>
+                <i class="fa-solid fa-star orange"></i>
+                <i class="fa-solid fa-star grey "></i>
+              </div>
+              <div *ngIf=" average2 === 3">
+                <i class="fa-solid fa-star orange"></i>
+                <i class="fa-solid fa-star orange"></i>
+                <i class="fa-solid fa-star orange"></i>
+                <i class="fa-solid fa-star grey "></i>
+                <i class="fa-solid fa-star grey "></i>
+
+              </div>
+              <div *ngIf=" average2 === 2">
+                <i class="fa-solid fa-star orange"></i>
+                <i class="fa-solid fa-star orange"></i>
+                <i class="fa-solid fa-star grey "></i>
+                <i class="fa-solid fa-star grey "></i>
+                <i class="fa-solid fa-star grey "></i>
+
+              </div>
+              <div *ngIf=" average2 === 1">
+                <i class="fa-solid fa-star orange"></i>
+                <i class="fa-solid fa-star grey "></i>
+                <i class="fa-solid fa-star grey "></i>
+                <i class="fa-solid fa-star grey "></i>
+                <i class="fa-solid fa-star grey "></i>
+              </div>
+            </div>
+          </h3>
+        </div>
+        <div class="buttons">
+          <!------------------------------------------------------  contact details button ------------------------------------------------------------>
+          <div class="btncards">
+            <div class="buttondiv">
+              <!-- <button type="button" class="btn  btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop1"></button> -->
+              <button type="button" class="btn btn-sm" (click)="contactModal()" style="background-color: black;">Contact
+                details</button>
+
+
+
+
+            </div>
+            <div class="icons">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+            </div>
+          </div>
+
+          <!------------------------------------------------------  Request qoute button ------------------------------------------------------------>
+          <div class="btncards">
+            <div class="buttondiv">
+
+              <button type="button" class="btn  btn-sm" style="background-color: black;" [disabled]="btnstate"
+                (click)="confirm()  ">{{btnVal}}</button>
+
+            </div>
+            <div class="icons">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+            </div>
+          </div>
+
+          <!------------------------------------------------------  view gallery button ------------------------------------------------------------>
+
+          <div class="btncards">
+            <div class="buttondiv">
+              <!-- Button trigger modal -->
+              <button type="button" class="btn  btn-sm" (click)="galleryModal()" data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop2">
+
+                View gallery
+              </button>
+
+            </div>
+            <div class="icons">
+              <i class="fa fa-camera" aria-hidden="true"></i>
+            </div>
+          </div>
+
+
+          <!------------------------------------------------------  Review button ------------------------------------------------------------>
+          <div class="btncards">
+            <div class="buttondiv">
+              <!-- Button trigger modal -->
+              <button type="button" class="btn  btn-sm" (click)="reviews()">Reviews</button>
+            </div>
+            <div class="icons">
+              <i class="fa fa-comments" aria-hidden="true"></i>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+</ng-container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+
+  <button #gallery hidden data-modal-toggle="gallery" (click)="showimages()">
+    view </button>
+
+  <!-- Main modal -->
+  <div id="gallery" tabindex="-133" aria-hidden="true"
+    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center">
+    <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
+      <!-- Modal content -->
+      <div class="relative bg-gray-50 rounded-lg dark:bg-gray-700">
+        <!-- Modal header -->
+        <div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+            Gallery
+          </h3>
+        </div>
+        <!-- Modal body -->
+        <div class="p-6 space-y-6">
+          <div class="form-group w-full">
+
+          </div>
+          <div>
+
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active" *ngFor="let img of galleryImg; let x = index">
+                  <img src={{show.image}} class="d-block w-100 im" alt="...">
+                </div>
+                <a class="carousel-control-prev" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon p" aria-hidden="true" (click)="prev()"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon n" id="n" aria-hidden="true" (click)='next()'></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+          <!-- Modal footer -->
+          <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
+            <button data-modal-toggle="gallery" type="button" class="bt-orange">
+              Close
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div>
+
+    <button #contact hidden data-modal-toggle="contact">
+      view </button>
+
+    <!-- Main modal -->
+    <div id="contact" tabindex="-133" aria-hidden="true"
+      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center">
+      <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
+        <!-- Modal content -->
+        <div class="relative bg-gray-50 rounded-lg dark:bg-gray-700">
+          <!-- Modal header -->
+          <div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+              Description
+            </h3>
+          </div>
+          <!-- Modal body -->
+          <div class="p-6 space-y-6">
+            <div class="form-group w-full">
+              <h5 class="modal-title" id="staticBackdropLabel"> Phone number: &nbsp; {{contractorName[0].phonenumber}}
+              </h5>
+
+              <h5 class="modal-title" id="staticBackdropLabel"> Email: &nbsp; {{contractorName[0].email}} </h5>
+            </div>
+            <div>
+
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
+              <button data-modal-toggle="contact" type="button" class="bt-orange">
+                Close
+              </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>

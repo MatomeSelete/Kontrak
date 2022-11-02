@@ -1,0 +1,230 @@
+<p-toast position="top-right"></p-toast>
+<div class="">
+<div class="container-fluid">
+  <div
+    class=" px-2 py-4 px-md-5 text-lg-start my-5 col-md-12 col-lg-12 col-sm-12"
+  >
+    <div class="row justify-content-center align-items-center">
+      <div class="col col-md -12 col-xl-7 justify-items-center">
+        <div
+          class="card end bg-glass px-4 py-5 px-md-5 w-10xl background"
+          style="border-radius: 15px;"
+        >
+          <h1>
+            <span style="color: #efac48;">Kon</span
+            ><span style="color: #0f5b87;">trak</span>
+          </h1>
+
+          <h3 class="h3tag">Register</h3>
+
+          <form
+            [formGroup]="form"
+            (ngSubmit)="onSubmit()"
+            (ngSubmit)="set_registerForm()"
+          >
+            <div class="input-group mb-3 zero-radius">
+              <span class="input-group-text vb zero-radius" id="basic-addon1">
+                <i class="fa fa-user" aria-hidden="true"></i
+              ></span>
+
+              <input
+                [ngClass]="{ 'is-invalid': submitted && f['firstname'].errors }"
+                type="text"
+                formControlName="firstname"
+                class="form-control bv"
+                placeholder="Name"
+                aria-label="firstname"
+                aria-describedby="basic-addon1"
+              />
+              <div
+                *ngIf="submitted && f['firstname'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['firstname'].errors['required']">
+                  Name is required
+                </div>
+              </div>
+            </div>
+
+            <div class="input-group mb-3 zero-radius">
+              <span class="input-group-text vb zero-radius" id="basic-addon1">
+                <i class="fa fa-user" aria-hidden="true"></i
+              ></span>
+
+              <input
+                [ngClass]="{ 'is-invalid': submitted && f['lastname'].errors }"
+                type="text"
+                class="form-control bv"
+                placeholder="Last name"
+                aria-label="lastname"
+                formControlName="lastname"
+                aria-describedby="basic-addon1"
+              />
+              <div
+                *ngIf="submitted && f['lastname'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['lastname'].errors['required']">
+                  Last name is required
+                </div>
+              </div>
+            </div>
+            <!-- //////// -->
+
+            <div class="input-group form-group mb-3 vb">
+              <div class="icons"></div>
+              <select
+                formControlName="usertype"
+                class="form-control c"
+                placeholder="What kind of a contractor are you?"
+                formControlName="usertype"
+                [ngClass]="{'is-invalid': submitted && f['usertype'].errors }"
+              >
+                <option value="" disabled selected>Choose your role</option>
+                <option value="Client">Client</option>
+                <option value="Contractor">Contractor</option>
+              </select>
+              <div
+                *ngIf="submitted && f['usertype'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['usertype'].errors['required']">
+                  User type is required
+                </div>
+              </div>
+            </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text vb" id="basic-addon1">
+                <i class="fa fa-envelope" aria-hidden="true"></i
+              ></span>
+
+              <input
+                [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+                type="email"
+                class="form-control bv"
+                formControlName="email"
+                placeholder="Email"
+                aria-label="email"
+                aria-describedby="basic-addon1"
+              />
+              <div
+                *ngIf="submitted && f['email'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['email'].errors['required']">
+                  Email is required
+                </div>
+                <div *ngIf="f['email'].errors['email']">Email is invalid</div>
+              </div>
+            </div>
+
+            <div class="input-group form-group mb-3 zero-radius">
+              <span class="input-group-text vb zero-radius" id="basic-addon1"
+                ><i class="fa fa-phone" aria-hidden="true"></i
+              ></span>
+
+              <input
+                [ngClass]="{ 'is-invalid': submitted && f['phonenumber'].errors }"
+                type="text"
+                class="form-control bv"
+                placeholder="phone number"
+                aria-label="Username"
+                formControlName="phonenumber"
+                aria-describedby="basic-addon1"
+              />
+              <div
+                *ngIf="submitted && f['phonenumber'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['phonenumber'].errors['required']">
+                  phone Number is required
+                </div>
+                <div *ngIf="f['phonenumber'].errors['minlength']">
+                  Phone Number must be at least 6 characters
+                </div>
+                <div *ngIf="f['phonenumber'].errors['maxlength']">
+                  Phone Number must not exceed 20 characters
+                </div>
+              </div>
+            </div>
+
+            <div class="input-group form-group mb-3 zero-radius">
+              <span class="input-group-text vb zero-radius" id="basic-addon1">
+                <i class="fa fa-lock" aria-hidden="true"></i
+              ></span>
+
+              <input
+                [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
+                type="password"
+                class="form-control bv"
+                placeholder="Password"
+                formControlName="password"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+              <div
+                *ngIf="submitted && f['password'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['password'].errors['required']">
+                  Password is required
+                </div>
+                <div *ngIf="f['password'].errors['minlength']">
+                  Password must be at least 6 characters
+                </div>
+                <div *ngIf="f['password'].errors['maxlength']">
+                  Username must not exceed 40 characters
+                </div>
+              </div>
+            </div>
+
+            <div class="input-group form-group mb-3 zero-radius">
+              <span class="input-group-text vb zero-radius" id="basic-addon1">
+                <i class="fa fa-lock" aria-hidden="true"></i
+              ></span>
+
+              <input
+                [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
+                type="password"
+                class="form-control bv"
+                placeholder=" confirm Password"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+                formControlName="confirmPassword"
+              />
+              <div
+                *ngIf="submitted && f['password'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['password'].errors['required']">
+                  Password is required
+                </div>
+                <div *ngIf="f['password'].errors['minlength']">
+                  Password must be at least 6 characters
+                </div>
+                <div *ngIf="f['password'].errors['maxlength']">
+                  Username must not exceed 40 characters
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="form-group mt-3" style="text-align: center;">
+                <button type="submit" class="submit btn-block bt-orange">
+                  Register
+                </button>
+              </div>
+              <small class="loginbutton"
+                >Already a member?
+                <a style="color: #efac48;" routerLink="/">Login</a></small
+              >
+            </div>
+          </form>
+
+          <div class="fillup"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

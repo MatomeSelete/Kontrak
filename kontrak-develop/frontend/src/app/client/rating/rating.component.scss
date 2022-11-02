@@ -1,0 +1,224 @@
+
+//Desktop
+@media screen and (min-width: 769px) {
+	.container {
+	  width: 70vw;
+	}
+  }
+  
+	.card-registration .select-arrow {
+	  top: 13px;
+	}
+  
+	.gradient-custom {
+	  margin-top: 2vh;
+	  margin-bottom: 10vh;
+	}
+  
+	button {
+	  box-sizing: border-box;
+	  background: #E0C5AC;
+	  border: none;
+	  border-radius: 10px;
+	  line-height: 16px;
+	  text-align: center;
+	  width: 186px;
+	  height: 47px;
+	  text-align: center;
+	  color: #FFFFFF;
+	}
+  
+  .co{
+	
+	background:  #EFAC48;
+	
+  }
+  
+  .ci{
+
+	background: #EFAC48;
+  }
+  
+	element.style {
+	  border-radius: 15px;
+	}
+  
+	@media screen and (min-width: 769px) and (min-width: 768px) {
+	  .px-md-5[_ngcontent-iat-c49] {
+		padding-right: 0.5rem !important;
+	  }
+	}
+  
+	@media (min-width: 768px) {
+	  .px-md-5 {
+		padding-right: 3rem !important;
+		padding-left: 3rem !important;
+	  }
+  
+	  .py-5 {
+		padding-top: .5rem !important;
+		padding-bottom: 3rem !important;
+	  }
+	}
+  
+	.c {
+	  background-color: red;
+	}
+  
+	html,
+	body {
+	  margin: 0px;
+	  height: 100%;
+	}
+  
+  
+	.box {
+	  background: red;
+	  position: absolute;
+	  top: 0px;
+	  right: 0px;
+	  bottom: 0px;
+	  left: 0px;
+	}
+  
+  
+  
+  
+	#radius-shape-1 {
+	  height: 100%;
+	  width: 100%;
+	  top: -60%;
+	  left: -130%;
+	  // background: radial-gradient(#44006b, #ad1fff);
+	  overflow: hidden;
+	}
+  
+	.background-radial-gradient {
+	  background-color: #F5F5F5;
+	  height: 150%;
+	}
+  
+	//Tablet
+	@media screen and (min-width: 768px)and (max-width:768px) {
+	  .container {
+		width: 65vw;
+	  }
+	}
+  
+	@media screen and (min-width: 375px) {
+	  .container {
+		width: 100vw;
+	  }
+	}
+  
+	body {
+	  background-color: #F5F5F5;
+	  height: auto;
+	  padding: auto;
+	  margin: auto;
+	  
+	}
+  
+
+	.background{
+		box-shadow:  0px 4px 4px #EFAC48;;
+	}
+	
+	.bt-orange{
+		width: 200px;
+		height: 40px;
+	
+	
+	background: #EFAC48;
+	border-radius: 5px;
+	}
+	
+	
+	.orange{
+		color: #EFAC48;
+	   
+	}
+	h1{
+		font-size: 40px;
+		text-shadow: 0px 2px 2px#bcbcbc;
+		text-align: center;
+	}
+	.cen{
+		text-align: center;
+		font-size: 20px;
+		font-weight: 20;
+	
+	}
+	.mgr{
+		margin-left: 5px;
+	  
+	}
+	
+	.test{
+		background-color: rgb(132, 206, 132);
+	}
+	.bg-ora{
+		color: #EFAC48;
+	}
+	
+	
+	
+	.ratingT{
+    border: none;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px #EFAC48;
+    border-radius: 2px;
+    }
+
+
+
+
+    /////================================= rating =============================
+   
+    .rate {
+        float: right;
+        height: 46px;
+       
+    }
+    .rate:not(:checked) > input {
+        position:absolute;
+        top:-9999px;
+    }
+    .rate:not(:checked) > label {
+        float:right;
+        width:1em;
+        overflow:hidden;
+        white-space:nowrap;
+        cursor:pointer;
+        font-size:30px;
+        color:#ccc;
+    }
+    .rate:not(:checked) > label:before {
+        content: '★';
+    }
+    .rate > input:checked ~ label {
+        color: #EFAC48;    
+    }
+    .rate:not(:checked) > label:hover,
+    .rate:not(:checked) > label:hover ~ label {
+        color: #EFAC48;  
+    }
+    .rate > input:checked + label:hover,
+    .rate > input:checked + label:hover ~ label,
+    .rate > input:checked ~ label:hover,
+    .rate > input:checked ~ label:hover ~ label,
+    .rate > label:hover ~ input:checked ~ label {
+        color: #EFAC48;
+    }
+    .ratingTxt{
+        font-size: 30px;
+    }
+	.background{
+		box-shadow:  0px 4px 4px #EFAC48;;
+	}
+    /* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
+
+.grey
+{
+	color: grey;
+}
